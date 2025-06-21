@@ -3,6 +3,11 @@ import { Eye, Target } from 'lucide-react';
 import Team from '@/components/About/Team';
 import Values from '@/components/About/Values';
 import Achievements from '@/components/About/Achievements';
+
+export const metadata = {
+  title: "About Us",
+  description:'Learn more about our mission, vision, values, and the passionate team driving innovation at FutecAI.',
+};
 function About() {
   return (
     <div>
@@ -49,7 +54,7 @@ function About() {
             </p>
           </div>
           {/* Core Values Grid */}
-          <div className='grid w-full grid-cols-1 md:grid-cols-3 gap-8 mt-8'>
+          <div className='grid w-full grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-8'>
             <Values/>
           </div>
         </div>

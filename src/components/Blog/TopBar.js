@@ -1,12 +1,17 @@
+'use client';
 import React from 'react'
+import useStore from '../State/store';
+import ClientWithBlogs from '../State/ClientWithBlogs';
 
-function TopBar({blogs}) {
+function TopBar() {
+const blogs = useStore((state)=> state.blogs) ||[];
 const [searchTerm, setSearchTerm] = React.useState('');
-  const [filterYear, setFilterYear] = React.useState('');
-  const [sortBy, setSortBy] = React.useState('');
+const [filterYear, setFilterYear] = React.useState('');
+const [sortBy, setSortBy] = React.useState('');
+
   return (
-    <>
-    {/* Search, Filter and Sort Section */}
+    <ClientWithBlogs>
+      {/* Search, Filter and Sort Section */}
       <div className="animate-fade-in delay-0 max-w-[1200px] mx-auto mt-10 mb-4 lg:mb-8 px-4">
         {/* Title and Description */}
         <div className="mb-8 text-center">
@@ -35,7 +40,7 @@ const [searchTerm, setSearchTerm] = React.useState('');
               onChange={e => setFilterYear(e.target.value)}
             >
               <option value="">All Years</option>
-              {[...new Set(blogs.map(blog => new Date(blog.date).getFullYear()))].map(year => (
+              {[...new Set(blogs.map(blog => new Date(blog.createdAt).getFullYear()))].map(year => (
                 <option key={year} value={year}>{year}</option>
               ))}
             </select>
@@ -56,8 +61,7 @@ const [searchTerm, setSearchTerm] = React.useState('');
           </div>
         </div>
       </div>
-
-    </>
+    </ClientWithBlogs>
   )
 }
 

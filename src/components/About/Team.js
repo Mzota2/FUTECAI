@@ -4,12 +4,11 @@ import Image from 'next/image';
 import AOS from 'aos';
 function Team() {
     const teamMembers = [
-        { name: "John Doe", role: "CEO & Founder", image: "/client1.jpg" },
-        { name: "Jane Smith", role: "CTO", image: "/client2.jpg" },
-        { name: "Alice Johnson", role: "Lead Developer", image: "/client3.jpg" },
-        { name: "Bob Brown", role: "Marketing Manager", image: "/client1.jpg" },
-        { name: "Charlie Davis", role: "UX Designer", image: "/client2.jpg" },
-        { name: "Eve Wilson", role: "Data Scientist", image: "/client3.jpg" }
+        { name: "Mr. Christopher F. Nyirenda", role: "CEO & Founder", image: "/ceo-chris.jpg" },
+        { name: "Mr. Chimwemwe Singini", role: "CEO & Co-Founder", image: "/ceo-singini.jpg" },
+        { name: "Mr. Emmanuel M. Chirambo", role: "CTO & Co-Founder", image: "/cto-mzota.jpg" },
+        { name: "Miss Yamikani Makwinja", role: "Head of ICT Operations Officer", image: "/ict-yamikani.jpg" },
+        { name: "Miss Linly Maganga", role: "Sales & Communication Officer", image: "/sales-linly.jpg" },
     ];
 
   useEffect(()=>{
@@ -30,7 +29,7 @@ function Team() {
             alt={member.name}
             width={300}
             height={300}
-            className='rounded-full mb-4 object-center h-auto max-h-[300px] w-full object-cover shadow-md'
+            className='rounded-full mb-4 object-center w-[300px] h-[300px] object-cover shadow-md'
             loading="lazy"
         />
         <h3 className='text-lg font-semibold'>{member.name}</h3>

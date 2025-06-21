@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 function CallToAction() {
   return (
     <section className="py-8 px-4">
@@ -10,9 +11,9 @@ function CallToAction() {
         <p className="text-base sm:text-lg text-slate-700/90 text-center">
           Contact us today to learn how FutecAI can help you achieve your digital transformation goals.
         </p>
-        <Button className="bg-primary text-white hover:bg-primary/80 px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg rounded-sm cursor-pointer shadow-lg hover:scale-105 transition-all duration-300">
+        <Link href={'/contact'} className="bg-primary text-white hover:bg-primary/80 px-6 py-4 text-base md:text-lg rounded-sm cursor-pointer shadow-lg hover:scale-105 transition-all duration-300">
           Get in Touch
-        </Button>
+        </Link>
       </div>
     </section>
   )

@@ -1,9 +1,6 @@
-'use client';
+
 import BarChartComponent from '@/components/Admin/BarChartComponent';
 import React from 'react'
-import { BarChart } from 'recharts'
-import { useState } from 'react';
-import Link from 'next/link';
 
 import {
     MessageCircle,
@@ -13,7 +10,13 @@ import {
     
 } from 'lucide-react';
 
-function Dashboard() {
+async function Dashboard() {
+    // cause some delay
+    await new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve();
+        }, 3000);
+    });
 
 return (
     <div className="p-8 bg-white shadow-md min-h-screen">

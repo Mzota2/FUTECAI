@@ -1,11 +1,13 @@
 'use client';
 import React, {useEffect} from 'react'
 import { Button } from '@/components/ui/button'
-import { Brain, Layers, Compass, Lightbulb } from 'lucide-react';
+import { Brain, Layers, Compass, Lightbulb, Route } from 'lucide-react';
 import AOS from 'aos';
 import "aos/dist/aos.css";
+import { useRouter } from 'next/navigation';
 
 function Services() {
+  const route = useRouter();
   const services = [
     {
       title: 'Artificial Intelligence Solutions Tailored for You',
@@ -17,10 +19,18 @@ function Services() {
       description: 'We specialize in creating robust applications that can handle complex business processes.',
       icon: <Layers className="w-14 h-14 text-white" />
     },
+
+    
     {
       title: 'Expert Tech Consultancy to Guide Your Journey',
       description: 'Our consultancy services provide you with the expertise and guidance needed to navigate the complex world of technology.',
       icon: <Compass className="w-14 h-14 text-white" />
+    },
+
+    {
+      title: 'Mentorship & Training',
+      description: 'We provide mentorship and trainings in software development, AI, and tech industry.',
+      icon: <Lightbulb className="w-14 h-14 text-white" />
     }
   ]
 
@@ -35,7 +45,7 @@ function Services() {
       </div>
       <h3 className="group-hover:text-white/90 font-bold text-xl text-primary/80 text-center">{service.title}</h3>
       <p className="text-slate-700/90 group-hover:text-white/70 text-center">{service.description}</p>
-      <Button className="group-hover:bg-white/80 cursor-pointer shadow-sm drop-shadow-md bg-transparent hover:bg-blue-100 border-primary text-black px-6 py-3 rounded-md transition-colors duration-300 border hover:border-secondary">Learn More</Button>
+      <Button onClick={()=>{route.push("/services")}}  className="group-hover:bg-white/80 cursor-pointer shadow-sm drop-shadow-md bg-transparent hover:bg-blue-100 border-primary text-black px-6 py-3 rounded-md transition-colors duration-300 border hover:border-secondary">Learn More</Button>
       <div className='absolute group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary from-primary/30 to-secondary/20 bottom-0 left-0 w-full bg-primary h-4 rounded-b-md'></div>
     </div>
   ));
@@ -62,7 +72,7 @@ function Services() {
           </div>
         </div>
         {/* Artistic Masonry */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-12 max-w-[1200px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 py-12 max-w-[1200px] mx-auto">
           {serviceCards}
         </div>
       </section>

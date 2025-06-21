@@ -1,7 +1,12 @@
 import React from 'react'
 import ServicesGrid from '@/components/Services/Services';
-function Services() {
 
+export const metadata = {
+  title: "Services",
+  description: 'Discover the range of services we offer to help your business grow with innovative technology and expert guidance.',
+};
+
+function Services() {
   return (
     <div>
       {/* Title and Description */}

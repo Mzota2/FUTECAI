@@ -1,0 +1,102 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  username     String? 
+  phone        String?
+  password     String? 
+  type         UserType @default(client)
+  isVerified   Boolean  @default(false)
+  verificationToken String? @db.LongText
+  resetToken   String? @db.LongText
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Client-specific fields
+  role         UserRole? // Only for clients
+  source       SourceType? // Only for clients
+  reason       String? // Only for clients
+  
+  @@index([email])
+}
+
+enum UserType {
+  admin
+  client
+}
+
+enum UserRole {
+  developer
+  manager
+  student
+  researcher
+  other
+}
+
+enum SourceType {
+  search_engine
+  social_media
+  friend_colleague
+  advertisement
+  other
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  access_token      String? @db.LongText
+  token_type        String?
+  scope             String?
+  id_token          String? @db.LongText
+  expires_at        Int?
+  refresh_token     String? @db.LongText
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@unique([provider, providerAccountId])
+}
+
+model BlogPost {
+  id          String   @id @default(uuid())
+  title       String   @unique
+  image       String
+  description String   @db.LongText
+  date        DateTime @default(now())
+  views       Int      @default(0)
+  likes       Int      @default(0)
+  authorId    String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Message {
+  id      String   @id @default(uuid())
+  name    String
+  email   String
+  message String   @db.LongText
+  createdAt DateTime @default(now())
+}
+
+
+
+
+

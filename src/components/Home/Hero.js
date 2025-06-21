@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import HomeAnimation from './HomeAnimation'
+import Link from 'next/link'
 function Hero() {
 
   return (
@@ -17,12 +18,16 @@ function Hero() {
               </p>
               {/* Buttons */}
               <div className="mt-4 md:mt-8 flex gap-6 animate-fade-in delay-200 ">
-                <Button className=" text-white hover:bg-secondary cursor-pointer px-4 md:px-8 md:py-6 py-3 rounded-md text-lg font-medium ">
-                  Get Started
-                </Button>
-                <Button className="bg-transparent border border-primary cursor-pointer hover:bg-secondary hover:border-none text-black hover:text-white  px-4 md:px-8 py-3 md:py-6 rounded-md text-lg font-medium ">
-                  Learn More
-                </Button>
+                <Link href={'/register'} className="relative flex items-center justify-center px-6 py-3 overflow-hidden font-medium transition-all duration-300 transform bg-primary rounded-tl-xl rounded-br-none group hover:bg-gradient-to-r hover:from-primary hover:to-secondary">
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-primary to-secondary opacity-0 group-hover:opacity-100 transition duration-300"></span>
+                  <span className="absolute inset-0 w-full h-full border-2 border-primary group-hover:border-secondary"></span>
+                  <span className="relative text-white text-sm md:text-lg">Get Started</span>
+                </Link>
+                <Link href={'/about'} className="relative flex items-center justify-center px-6 py-3 overflow-hidden font-medium transition-all duration-300 transform bg-transparent border-2 border-primary rounded-tl-xl rounded-br-none group hover:bg-gradient-to-r hover:from-primary hover:to-secondary">
+                  <span className="absolute inset-0 w-full h-full bg-white opacity-50 group-hover:opacity-100 transition duration-300"></span>
+                  <span className="absolute inset-0 w-full h-full border-2 border-primary group-hover:border-secondary"></span>
+                  <span className="relative text-black text-sm md:text-lg ">Learn More</span>
+                </Link>
               </div>
             </div>
             {/* Right Side Animated Image */}

@@ -1,5 +1,4 @@
 import { Facebook, Instagram, Twitter } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import Button from '../Button/Button'
@@ -19,7 +18,7 @@ function Footer() {
           <div className='flex flex-col gap-4'>
             <div>
               <p><strong> Address</strong></p>
-              <p>123 FutecAI St.</p>
+              <p>Chichiri</p>
               <p>Blantyre, Malawi</p>
             </div>
 
@@ -57,7 +56,7 @@ function Footer() {
               <li><Link href='/about'>About Us</Link></li>
               <li><Link href='/services'>Services</Link></li>
               <li><Link href='/contact'>Contact Us</Link></li>
-              <li><Link href='/privacy'>Privacy Policy</Link></li>
+              <li><Link href='/privacy-policy'>Privacy Policy</Link></li>
             </ul>
           </div>
 
@@ -66,8 +65,8 @@ function Footer() {
             <h3 className='font-bold'>Help & Support</h3>
             <ul className='list-none p-0'>
               <li><Link href='/faq'>FAQ</Link></li>
-              <li><Link href='/support'>Support Center</Link></li>
-              <li><Link href='/terms'>Terms of Service</Link></li>
+              <li><Link href='/contact'>Support Center</Link></li>
+              <li><Link href='/terms-of-service'>Terms of Service</Link></li>
             </ul>
           </div>
           

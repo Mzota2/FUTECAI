@@ -20,10 +20,10 @@ function Services() {
       description:
         "Get expert guidance to navigate the complex tech landscape. We help you make informed decisions, optimize your IT infrastructure, and implement the right technologies for your business goals.",
       images: [
-        { src: "/AI1.jpg", alt: "Consultancy Project 1" },
-        { src: "/AI2.jpg", alt: "Consultancy Project 2" },
-        { src: "/AI3.jpg", alt: "Consultancy Project 3" },
-        { src: "/AI4.jpg", alt: "Consultancy Project 4" },
+        { src: "/TC1.jpg", alt: "Consultancy Project 1" },
+        { src: "/TC2.jpg", alt: "Consultancy Project 2" },
+        { src: "/TC3.jpg", alt: "Consultancy Project 3" },
+        { src: "/TC4.jpg", alt: "Consultancy Project 4" },
       ],
     },
     {
@@ -31,10 +31,10 @@ function Services() {
       description:
         "We build tailored software solutions that meet your unique business needs, ensuring scalability, security, and high performance. From web apps to enterprise systems, our team delivers robust products.",
       images: [
-        { src: "/AI1.jpg", alt: "Software Project 1" },
-        { src: "/AI2.jpg", alt: "Software Project 2" },
-        { src: "/AI3.jpg", alt: "Software Project 3" },
-        { src: "/AI3.jpg", alt: "Software Project 4" },
+        { src: "/CD1.jpg", alt: "Software Project 1" },
+        { src: "/CD2.jpg", alt: "Software Project 2" },
+        { src: "/CD3.png", alt: "Software Project 3" },
+        { src: "/CD4.jpg", alt: "Software Project 4" },
       ],
     },
     {
@@ -42,10 +42,10 @@ function Services() {
       description:
         "Empower your team with our mentorship and training programs. We offer hands-on workshops and personalized coaching to help your staff master new technologies and best practices.",
       images: [
-        { src: "/AI1.jpg", alt: "Training Project 1" },
-        { src: "/AI2.jpg", alt: "Training Project 2" },
-        { src: "/AI3.jpg", alt: "Training Project 3" },
-        { src: "/AI4.jpg", alt: "Training Project 4" },
+        { src: "/MT1.jpg", alt: "TMTning Project 1" },
+        { src: "/MT2.PNG", alt: "Training Project 2" },
+        { src: "/MT3.jpg", alt: "Training Project 3" },
+        { src: "/MT4.jpg", alt: "Training Project 4" },
       ],
     },
   ];
@@ -65,7 +65,7 @@ function Services() {
                 data-aos="fade-up"
                 data-aos-delay={(idx) * 200}
                 key={service.title}
-                className={`flex flex-col md:flex-row${isTextLeft ? "" : "-reverse"} items-center bg-white/90 rounded-lg shadow-lg p-6 gap-8`}
+                className={`flex flex-col ${isTextLeft ? "md:flex-row" : "md:flex-row-reverse"} items-center bg-white/90 rounded-lg shadow-lg p-6 gap-8`}
               >
                 {/* Text */}
                 <div className="flex-1">

@@ -17,6 +17,7 @@ import {
     X as CloseIcon,
     
 } from 'lucide-react';
+import ClientWithUser from '../State/ClientWithUser';
 
 function Menu() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -44,7 +45,7 @@ function Menu() {
         Bell,
     };
   return (
-    <>
+    <ClientWithUser>
         {/* Sidebar */}
         <aside
             className={`fixed left-0 w-64 h-screen bg-white border-r border-primary/20 shadow-lg flex flex-col transition-transform duration-200 ease-in-out
@@ -87,7 +88,7 @@ function Menu() {
         >
             <MenuIcon className="w-6 h-6 text-secondary" />
         </button>
-    </>
+    </ClientWithUser>
   )
 }
 

@@ -4,9 +4,11 @@ import Image from 'next/image';
 import AOS from 'aos';
 function Values() {
     const values = [
-    { title: "Innovation", description: "Pioneering Tomorrow's Solutions Today", image: "/AI8.jpg" },
-    { title: "Collaboration", description: "Working Together for a Brighter Future", image: "/AI8.jpg" },
-    { title: "Integrity", description: "Upholding the Highest Standards of Ethics", image: "/AI8.jpg" }
+    { title: "Innovation", description: "Pioneering Tomorrow's Solutions Today", image: "/innovation.png" },
+    { title: "Integrity", description: "Upholding the Highest Standards of Ethics", image: "/integrity.png" },
+    { title: "Excellence", description: "Striving for Perfection in Every Aspect", image: "/excellence.jpg" },
+    { title: "Customer-centricity", description: "Putting Our Customers at the Heart of Everything We Do", image: "/customer-centricity.png" }
+    
   ];
 
   useEffect(()=>{
